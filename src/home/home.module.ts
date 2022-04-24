@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+import { HomeController } from './home.controller';
+import { HomeService } from './home.service';
 
 @Module({
-  // imports: [TypeOrmModule.forFeature([Admin])],
   imports: [
     ConfigModule.forRoot(),
     JwtModule.register({
@@ -13,11 +12,7 @@ import { AuthService } from './auth.service';
       signOptions: { expiresIn: '10h' },
     }),
   ],
-  providers: [AuthService],
-  controllers: [AuthController],
+  providers: [HomeService],
+  controllers: [HomeController],
 })
-export class AuthModule {
-  constructor() {
-    console.log(process.env.TOKEN_SECRET);
-  }
-}
+export class HomeModule {}

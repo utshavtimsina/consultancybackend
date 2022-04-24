@@ -1,0 +1,28 @@
+{
+  "title": {
+    "heading": "We Are The Best Consulting Agency",
+    "text": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
+  },
+  "studyAbroadSummary": [],
+  "testomonials": [],
+  "achievements": [
+    {
+      "title": "this",
+      "icon": "string dasdasd",
+      "marks": "dasasdasdasd",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "STUDENTS ENROLLED IN PY COURSES",
+      "icon": "icofont-network-tower",
+      "marks": "7,000+"
+    },
+    {
+      "id": "3",
+      "title": "ENROLLED IN PTE-A PREPARATION CLASSES",
+      "icon": "icofont-touch",
+      "marks": "3,500+"
+    }
+  ]
+}
