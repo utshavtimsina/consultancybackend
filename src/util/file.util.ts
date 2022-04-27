@@ -30,7 +30,6 @@ export const pushObjToNestedFile = (
   let updatedData = [...db[pathName][propertyName]];
   const uuid = uuidv4();
   updatedData.push({ ...data, id: uuid });
-  console.log(updatedData);
   const dbData = {
     ...db,
     [pathName]: {
@@ -104,7 +103,7 @@ export const updateById = (
       [propertyName]: [...updatedData],
     };
     fs.writeFileSync(dbPathResolver(fileDbName), JSON.stringify(dbData));
-    return { message: 'Record updated successfully' };
+    return { ...updatedData[index] };
   }
   throw new InternalServerErrorException('No records found');
 };

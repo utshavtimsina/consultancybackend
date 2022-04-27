@@ -33,8 +33,17 @@ export class HomeController {
   }
 
   @Put('change-study-carousel')
-  async addStudyCarousel(@Body() body: IStudyCarousel) {
-    return this.homeService.addStudyCarousel(body);
+  @UseInterceptors(
+    FileInterceptor('image', {
+      storage: diskStorage({
+        filename: editFileName,
+        destination: './upload',
+      }),
+      fileFilter: imageFileFilter,
+    }),
+  )
+  async addStudyCarousel(@Body() body: IStudyCarousel,  @UploadedFile() file: any) {
+    return this.homeService.addStudyCarousel({...body, img: file?.path});
   }
 
   @Delete('change-study-carousel/:id')
@@ -43,10 +52,21 @@ export class HomeController {
   }
 
   @Put('change-study-carousel/:id')
+  @UseInterceptors(
+    FileInterceptor('image', {
+      storage: diskStorage({
+        filename: editFileName,
+        destination: './upload',
+      }),
+      fileFilter: imageFileFilter,
+    }),
+  )
   async updateStudyCarousel(
     @Param('id') id: string,
     @Body() body: IStudyCarousel,
+    @UploadedFile() file: any,
   ) {
+    body = file ? { ...body, img: file.path } : body;
     return this.homeService.updateStudyCarousel(id, body);
   }
 
@@ -64,8 +84,6 @@ export class HomeController {
     @Body() body: ITestomonialCarousel,
     @UploadedFile() file: any,
   ) {
-    console.log(file);
-
     return this.homeService.addTestomonialCarousel({
       ...body,
       img: file?.path,
