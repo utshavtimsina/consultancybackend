@@ -16,8 +16,4 @@ import { AuthService } from './auth.service';
   providers: [AuthService],
   controllers: [AuthController],
 })
-export class AuthModule {
-  constructor() {
-    console.log(process.env.TOKEN_SECRET);
-  }
-}
+export class AuthModule {}

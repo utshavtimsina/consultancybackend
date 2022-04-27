@@ -94,7 +94,7 @@ export const updateById = (
   let updatedData = [...homeDb[propertyName]];
   const index = updatedData.findIndex((record) => record.id === id);
   if (index > -1) {
-    updatedData[index] = { ...data, id: updatedData[index]?.id };
+    updatedData[index] = { ...updatedData[index],...data, id: updatedData[index]?.id };
     const dbData = {
       ...homeDb,
       [propertyName]: [...updatedData],
