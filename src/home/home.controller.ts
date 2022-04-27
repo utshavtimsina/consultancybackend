@@ -6,9 +6,13 @@ import {
   Param,
   Post,
   Put,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthGuard } from 'src/guards/auth.guard';
+import { editFileName, imageFileFilter } from 'src/util/common.util';
 import {
   IAchievements,
   IStudyCarousel,
@@ -16,6 +20,7 @@ import {
   IUpdateTitleRequestBody,
 } from './dto/home.dto';
 import { HomeService } from './home.service';
+import { diskStorage } from 'multer';
 
 @UseGuards(AuthGuard)
 @Controller('home')
@@ -46,8 +51,25 @@ export class HomeController {
   }
 
   @Post('add-testomonial-carousel')
-  async addTestomonialCarousel(@Body() body: ITestomonialCarousel) {
-    return this.homeService.addTestomonialCarousel(body);
+  @UseInterceptors(
+    FileInterceptor('image', {
+      storage: diskStorage({
+        filename: editFileName,
+        destination: './upload',
+      }),
+      fileFilter: imageFileFilter,
+    }),
+  )
+  async addTestomonialCarousel(
+    @Body() body: ITestomonialCarousel,
+    @UploadedFile() file: any,
+  ) {
+    console.log(file);
+
+    return this.homeService.addTestomonialCarousel({
+      ...body,
+      img: file?.path,
+    });
   }
 
   @Delete('delete-testomonial-carousel/:id')
@@ -56,10 +78,21 @@ export class HomeController {
   }
 
   @Put('update-testomonial-carousel/:id')
+  @UseInterceptors(
+    FileInterceptor('image', {
+      storage: diskStorage({
+        filename: editFileName,
+        destination: './upload',
+      }),
+      fileFilter: imageFileFilter,
+    }),
+  )
   async updateTestomonialCarousel(
     @Param('id') id: string,
     @Body() body: ITestomonialCarousel,
+    @UploadedFile() file: any,
   ) {
+    body = file ? { ...body, img: file.path } : body;
     return this.homeService.updateTestomonialCarousel(id, body);
   }
 
