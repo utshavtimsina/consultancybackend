@@ -1,1 +1,56 @@
-{"title":{"heading":"We Are The Best Consulting Agency","text":"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."},"studyAbroadSummary":[],"testomonials":[{"name":"fdsfad","text":"adfadsfa","img":"upload/d92e9569-f024-430e-b649-5b23c960cf19.png","id":"1c42a49c-f6f8-43c6-b9ae-e4f63c88da79"},{"name":"fzdsfasdfa","text":"adfasdfads","img":"upload/8a741c72-2805-449a-8188-f336ad295bc3.png","id":"1e25a6f3-8d97-48f8-bd10-250778144b09"}],"achievements":[{"title":"ENROLLED IN PTE-A PREPARATION CLASSES","icon":"icofont-addons","marks":"800+","id":"1"},{"id":"2","title":"STUDENTS ENROLLED IN PY COURSES","icon":"icofont-network-tower","marks":"7,000+"},{"id":"3","title":"ENROLLED IN PTE-A PREPARATION CLASSES","icon":"icofont-touch","marks":"3,500+"}]}
+{
+  "title": {
+    "heading": "We Are The Best Consulting Agency",
+    "text": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia"
+  },
+  "studyAbroadSummary": [
+    {
+      "title": "dasdasd",
+      "text": "asdaaaa",
+      "href": "asdasd",
+      "img": "upload/e57a5c83-72fa-42d4-9a3c-1f5d7bad11e0.png",
+      "id": "38f465d7-e308-4710-bb9e-b3e00b799a63"
+    },
+    {
+      "href": "adsfasdf",
+      "text": "asdfads",
+      "title": "fdfadsf",
+      "img": "upload/33ce4b3c-14d0-417a-ad87-3df989b2fc6e.png",
+      "id": "494de308-9f62-4233-8cda-c916a784213d"
+    }
+  ],
+  "testomonials": [
+    {
+      "name": "fdsfad",
+      "text": "adfadsfa",
+      "img": "upload/d92e9569-f024-430e-b649-5b23c960cf19.png",
+      "id": "1c42a49c-f6f8-43c6-b9ae-e4f63c88da79"
+    },
+    {
+      "name": "fadsfasdf",
+      "text": "asdfasdfadsf",
+      "img": "upload/b4a71b02-bf9d-4374-8c9e-3efb8eb11f77.png",
+      "id": "7a52a3c2-f5d2-4988-8ecc-3e03592cdfa3"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "ENROLLED IN PTE-A PREPARATION CLASSES",
+      "icon": "icofont-addons",
+      "marks": "800+",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "STUDENTS ENROLLED IN PY COURSES",
+      "icon": "icofont-network-tower",
+      "marks": "7,000+"
+    },
+    {
+      "id": "3",
+      "title": "ENROLLED IN PTE-A PREPARATION CLASSES",
+      "icon": "icofont-touch",
+      "marks": "3,500+"
+    }
+  ]
+}
